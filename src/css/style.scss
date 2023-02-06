@@ -1,0 +1,69 @@
+@import "constants";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  background-color: $white;
+  & .header-nav {
+    height: 4em;
+    text-align: center;
+    border-bottom: 1px solid $phe3no;
+    & ul {
+      list-style-type: none;
+      margin-left: 5%;
+      display: flex;
+      flex-flow: row no-wrap;
+      & li {
+        line-height: 4em;
+        margin-right: 2em;
+        & .nav-link {
+          background-color: $white;
+          color: $brown;
+          border: 1px solid $brown;
+          border-radius: 5px;
+          padding: 8px 15px;
+          text-decoration: none;
+          font-weight: bold;
+          &:hover {
+            background-color: $brown;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  & main {
+    & article {
+      & .main-nav {
+        height: 5em;
+        display: flexbox;
+        flex-flow: row no-wrap;
+        text-align: center;
+
+        & span {
+          line-height: 5em;
+          & input {
+            margin-right: 0.3em;
+          }
+          & .student-link {
+            margin-right: 1em;
+            display: inline-block;
+            color: $brown;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+          }
+        }
+      }
+      & div {
+        & h2 {
+          color: $brown;
+        }
+      }
+    }
+  }
+}

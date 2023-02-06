@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  background-color: #f0f0f0;
+}
+.wrapper .header-nav {
+  height: 4em;
+  text-align: center;
+  border-bottom: 1px solid #af2121;
+}
+.wrapper .header-nav ul {
+  list-style-type: none;
+  margin-left: 5%;
+  display: flex;
+  flex-flow: row no-wrap;
+}
+.wrapper .header-nav ul li {
+  line-height: 4em;
+  margin-right: 2em;
+}
+.wrapper .header-nav ul li .nav-link {
+  background-color: #f0f0f0;
+  color: #6d4f4b;
+  border: 1px solid #6d4f4b;
+  border-radius: 5px;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.wrapper .header-nav ul li .nav-link:hover {
+  background-color: #6d4f4b;
+  color: #f0f0f0;
+}
+.wrapper main article .main-nav {
+  height: 5em;
+  display: flexbox;
+  flex-flow: row no-wrap;
+  text-align: center;
+}
+.wrapper main article .main-nav span {
+  line-height: 5em;
+}
+.wrapper main article .main-nav span input {
+  margin-right: 0.3em;
+}
+.wrapper main article .main-nav span .student-link {
+  margin-right: 1em;
+  display: inline-block;
+  color: #6d4f4b;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.wrapper main article div h2 {
+  color: #6d4f4b;
+}/*# sourceMappingURL=style.css.map */
