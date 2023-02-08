@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: $white;
+}
+
 .wrapper {
   background-color: $white;
   height: 1vh;
@@ -84,7 +88,8 @@
       justify-content: space-between;
       height: 180px;
       & h2 {
-        margin-left: 8%;
+        font-size: 1.2em;
+        margin-left: 6%;
         line-height: 180px;
       }
     }
@@ -132,13 +137,13 @@
     margin: 0 3px;
     background-color: $white;
     border-radius: 5px;
-    padding: 1.8em;
+    padding: 1.2em;
     height: 5em;
     & svg {
       font-size: 2em;
     }
     &:nth-child(4) {
-      margin-right: 8em;
+      margin-right: 6em;
     }
     &:nth-child(-n + 2) {
       border: 2px solid $green;
@@ -318,7 +323,7 @@
 
 .data-view .table-row {
   &:first-child {
-    margin-top: 10em;
+    margin-top: 12em;
   }
   color: $brown;
   & div {

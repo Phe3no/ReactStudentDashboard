@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #f0f0f0;
+}
+
 .wrapper {
   background-color: #f0f0f0;
   height: 1vh;
@@ -82,7 +86,8 @@
   height: 180px;
 }
 .wrapper main .average-chart-menu h2 {
-  margin-left: 8%;
+  font-size: 1.2em;
+  margin-left: 6%;
   line-height: 180px;
 }
 .wrapper main .student-chart-menu {
@@ -127,14 +132,14 @@
   margin: 0 3px;
   background-color: #f0f0f0;
   border-radius: 5px;
-  padding: 1.8em;
+  padding: 1.2em;
   height: 5em;
 }
 .sort-data-container button svg {
   font-size: 2em;
 }
 .sort-data-container button:nth-child(4) {
-  margin-right: 8em;
+  margin-right: 6em;
 }
 .sort-data-container button:nth-child(-n+2) {
   border: 2px solid #3b6b38;
@@ -305,7 +310,7 @@
   color: #6d4f4b;
 }
 .data-view .table-row:first-child {
-  margin-top: 10em;
+  margin-top: 12em;
 }
 .data-view .table-row div {
   padding: 0.3em;
