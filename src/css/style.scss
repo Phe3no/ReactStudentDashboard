@@ -8,8 +8,13 @@
 
 .wrapper {
   background-color: $white;
+  height: 1vh;
   & .header-nav {
+    background-color: $white;
+    width: 100%;
     height: 4em;
+    position: fixed;
+    top: 0;
     text-align: center;
     border-bottom: 1px solid $phe3no;
     & ul {
@@ -37,17 +42,26 @@
     }
   }
   & main {
+    margin-top: 4em;
+    background-color: $white;
+    & .students-container {
+      margin-top: 4em;
+      display: flex;
+      flex-flow: row wrap;
+    }
     & article {
+      min-width: 330px;
       & .main-nav {
-        height: 5em;
         display: flexbox;
-        flex-flow: row no-wrap;
-        text-align: center;
+        flex-flow: row wrap;
+        margin: 0 6%;
 
-        & span {
-          line-height: 5em;
+        & div {
+          display: inline-block;
+          line-height: 3em;
           & input {
             margin-right: 0.3em;
+            accent-color: $phe3no;
           }
           & .student-link {
             margin-right: 1em;
@@ -65,5 +79,296 @@
         }
       }
     }
+    & .average-chart-menu {
+      display: flex;
+      justify-content: space-between;
+      height: 180px;
+      & h2 {
+        margin-left: 8%;
+        line-height: 180px;
+      }
+    }
+
+    & .student-chart-menu {
+      display: flex;
+      justify-content: space-between;
+    }
   }
+}
+
+.student-overview {
+  width: 30%;
+  border: 2px solid $green;
+  border-radius: 5px;
+  padding: 1em;
+  margin-top: 1em;
+  margin-left: 5%;
+  & h3 {
+    color: $phe3no;
+    font-size: 1.7em;
+  }
+  & .student-age {
+    color: $brown;
+    font-weight: bold;
+    padding: 0.3em 0;
+  }
+  & span {
+    padding: 0.3em 0;
+    display: flex;
+    & svg {
+      color: $green;
+      font-size: 1.3em;
+    }
+    & p {
+      padding-left: 0.5em;
+    }
+  }
+}
+
+.sort-data-container {
+  margin-right: 8%;
+  margin-top: 4em;
+  & button {
+    margin: 0 3px;
+    background-color: $white;
+    border-radius: 5px;
+    padding: 1.8em;
+    height: 5em;
+    & svg {
+      font-size: 2em;
+    }
+    &:nth-child(4) {
+      margin-right: 8em;
+    }
+    &:nth-child(-n + 2) {
+      border: 2px solid $green;
+      &:hover,
+      &:focus {
+        background-color: $green-opaque;
+      }
+      & svg {
+        color: $green;
+      }
+    }
+    &:nth-child(n + 3) {
+      border: 2px solid $phe3no;
+      &:hover,
+      &:focus {
+        background-color: $phe3no-opaque;
+      }
+      & svg {
+        color: $phe3no;
+      }
+    }
+    &:nth-child(n + 5) {
+      border: 2px solid $green;
+      &:hover {
+        background-color: $brown-opaque;
+      }
+      &:focus {
+        background-color: $white;
+      }
+      & svg {
+        color: $brown;
+      }
+    }
+  }
+}
+
+.data-page {
+  margin-right: 8%;
+  margin-top: 5em;
+  position: fixed;
+  top: 0;
+  & button {
+    margin: 0 3px;
+    background-color: $white;
+    border-radius: 5px;
+    padding: 1.8em;
+    height: 5em;
+    & svg {
+      font-size: 2em;
+    }
+    &:nth-child(2),
+    &:nth-child(4) {
+      margin-right: 4em;
+    }
+    &:nth-child(-n + 2) {
+      border: 2px solid $brown;
+      &:hover,
+      &:focus {
+        background-color: $brown-opaque;
+      }
+      & svg {
+        color: $brown;
+      }
+    }
+    &:nth-child(n + 3) {
+      border: 2px solid $phe3no;
+      &:hover,
+      &:focus {
+        background-color: $phe3no-opaque;
+      }
+      & svg {
+        color: $phe3no;
+      }
+    }
+    &:nth-child(n + 5) {
+      border: 2px solid $green;
+      &:hover {
+        background-color: $green-opaque;
+      }
+      &:focus {
+        background-color: $white;
+      }
+      & svg {
+        color: $green;
+      }
+    }
+  }
+}
+
+.data-view .data-page,
+.data-view .table-header,
+.data-view .table-row {
+  display: grid;
+  grid-template-areas: "a b c d e f g h";
+  grid-template-columns: 1.8fr 1.8fr 1fr 1.4fr 3fr 3fr 1.5fr 1.5fr;
+}
+
+.data-view .data-page {
+  background-color: $white;
+  align-items: center;
+  height: 4em;
+  margin-right: 0.5%;
+  margin-top: 4em;
+  width: 100%;
+  & button {
+    margin: 0 3px;
+    background-color: $white;
+    border-radius: 5px;
+    padding: 0.5em;
+    height: 3em;
+    & svg {
+      font-size: 2em;
+    }
+  }
+  & .pair-1 {
+    grid-area: f;
+    & button {
+      border: 2px solid $brown;
+      &:hover,
+      &:focus {
+        background-color: $brown-opaque;
+      }
+      & svg {
+        color: $brown;
+      }
+    }
+  }
+
+  & .pair-2 {
+    grid-area: g;
+    text-align: center;
+    & button {
+      border: 2px solid $phe3no;
+      &:hover,
+      &:focus {
+        background-color: $phe3no-opaque;
+      }
+      & svg {
+        color: $phe3no;
+      }
+    }
+  }
+  & .pair-3 {
+    grid-area: h;
+    text-align: center;
+    & button {
+      border: 2px solid $green;
+      &:hover {
+        background-color: $green-opaque;
+      }
+      &:focus {
+        background-color: $white;
+      }
+      & svg {
+        color: $green;
+      }
+    }
+  }
+}
+
+.data-view .table-header {
+  background-color: $white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  width: 100%;
+  position: fixed;
+  top: 7em;
+  & div {
+    padding: 0.5rem;
+    color: $phe3no;
+    &:nth-child(4n + 3),
+    &:nth-child(4n + 4) {
+      text-align: center;
+    }
+  }
+}
+
+.data-view .table-row {
+  &:first-child {
+    margin-top: 10em;
+  }
+  color: $brown;
+  & div {
+    padding: 0.3em;
+    border: 1px solid $white;
+    &:nth-child(4n + 3),
+    &:nth-child(4n + 4) {
+      text-align: center;
+    }
+  }
+  &:nth-child(odd) {
+    background-color: $green-opaque;
+  }
+  &:nth-child(even) {
+    background-color: $phe3no-opaque;
+  }
+}
+
+.about-article {
+  padding: 2em;
+  & h3 {
+    color: $phe3no;
+    margin: 0.5em 0;
+  }
+  & h2 {
+    color: $green;
+    font-size: 1.15em;
+    margin: 2em 0 0.5em 0;
+  }
+  & ul {
+    list-style-type: circle;
+    margin-left: 1.6em;
+    & li {
+      color: $brown;
+      & a {
+        color: $phe3no;
+        text-decoration: none;
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $white;
+  color: $brown;
+  text-align: center;
+  height: 4em;
+  line-height: 4em;
+  font-size: 1.4em;
+  font-weight: bold;
+  border-top: 1px solid $phe3no;
 }

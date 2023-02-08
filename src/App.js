@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+
 import {
   getAssignmentsStatus,
   getAssignmentsError,
@@ -20,6 +20,9 @@ import {
 import StudentsList from "./features/students/StudentsList";
 import Home from "./components/Home";
 import Student from "./components/Student";
+import DataTable from "./features/data/DataTable";
+import About from "./components/About";
+import Footer from "./components/Footer";
 import "./css/style.css";
 
 function App() {
@@ -33,12 +36,6 @@ function App() {
 
   const studentStatus = useSelector(getStudentsStatus);
   const studentError = useSelector(getStudentsError);
-
-  /*useEffect(
-    () => {
-      
-    }, [assignmentsStatus, reviewsStatus, studentStatus, dispatch]
-  );*/
 
   if (studentStatus === "idle") dispatch(fetchStudents());
   if (assignmentsStatus === "idle") dispatch(fetchAssignments());
@@ -60,8 +57,12 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/student" element={<Student />} />
+          <Route path="student">
+            <Route path=":studentName" element={<Student />} />
+          </Route>
           <Route path="/students" element={<StudentsList />} />
+          <Route path="/data" element={<DataTable />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </main>
     );
@@ -85,9 +86,20 @@ function App() {
                 Students
               </Link>
             </li>
+            <li>
+              <Link className="nav-link" to="/data">
+                Data
+              </Link>
+            </li>
+            <li>
+              <Link className="nav-link" to="/about">
+                About
+              </Link>
+            </li>
           </ul>
         </nav>
         {content}
+        <Footer />
       </div>
     </Router>
   );

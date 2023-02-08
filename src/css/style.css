@@ -6,9 +6,14 @@
 
 .wrapper {
   background-color: #f0f0f0;
+  height: 1vh;
 }
 .wrapper .header-nav {
+  background-color: #f0f0f0;
+  width: 100%;
   height: 4em;
+  position: fixed;
+  top: 0;
   text-align: center;
   border-bottom: 1px solid #af2121;
 }
@@ -35,19 +40,32 @@
   background-color: #6d4f4b;
   color: #f0f0f0;
 }
+.wrapper main {
+  margin-top: 4em;
+  background-color: #f0f0f0;
+}
+.wrapper main .students-container {
+  margin-top: 4em;
+  display: flex;
+  flex-flow: row wrap;
+}
+.wrapper main article {
+  min-width: 330px;
+}
 .wrapper main article .main-nav {
-  height: 5em;
   display: flexbox;
-  flex-flow: row no-wrap;
-  text-align: center;
+  flex-flow: row wrap;
+  margin: 0 6%;
 }
-.wrapper main article .main-nav span {
-  line-height: 5em;
+.wrapper main article .main-nav div {
+  display: inline-block;
+  line-height: 3em;
 }
-.wrapper main article .main-nav span input {
+.wrapper main article .main-nav div input {
   margin-right: 0.3em;
+  accent-color: #af2121;
 }
-.wrapper main article .main-nav span .student-link {
+.wrapper main article .main-nav div .student-link {
   margin-right: 1em;
   display: inline-block;
   color: #6d4f4b;
@@ -57,4 +75,284 @@
 }
 .wrapper main article div h2 {
   color: #6d4f4b;
+}
+.wrapper main .average-chart-menu {
+  display: flex;
+  justify-content: space-between;
+  height: 180px;
+}
+.wrapper main .average-chart-menu h2 {
+  margin-left: 8%;
+  line-height: 180px;
+}
+.wrapper main .student-chart-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.student-overview {
+  width: 30%;
+  border: 2px solid #3b6b38;
+  border-radius: 5px;
+  padding: 1em;
+  margin-top: 1em;
+  margin-left: 5%;
+}
+.student-overview h3 {
+  color: #af2121;
+  font-size: 1.7em;
+}
+.student-overview .student-age {
+  color: #6d4f4b;
+  font-weight: bold;
+  padding: 0.3em 0;
+}
+.student-overview span {
+  padding: 0.3em 0;
+  display: flex;
+}
+.student-overview span svg {
+  color: #3b6b38;
+  font-size: 1.3em;
+}
+.student-overview span p {
+  padding-left: 0.5em;
+}
+
+.sort-data-container {
+  margin-right: 8%;
+  margin-top: 4em;
+}
+.sort-data-container button {
+  margin: 0 3px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 1.8em;
+  height: 5em;
+}
+.sort-data-container button svg {
+  font-size: 2em;
+}
+.sort-data-container button:nth-child(4) {
+  margin-right: 8em;
+}
+.sort-data-container button:nth-child(-n+2) {
+  border: 2px solid #3b6b38;
+}
+.sort-data-container button:nth-child(-n+2):hover, .sort-data-container button:nth-child(-n+2):focus {
+  background-color: rgba(59, 107, 56, 0.2);
+}
+.sort-data-container button:nth-child(-n+2) svg {
+  color: #3b6b38;
+}
+.sort-data-container button:nth-child(n+3) {
+  border: 2px solid #af2121;
+}
+.sort-data-container button:nth-child(n+3):hover, .sort-data-container button:nth-child(n+3):focus {
+  background-color: rgba(175, 33, 33, 0.2);
+}
+.sort-data-container button:nth-child(n+3) svg {
+  color: #af2121;
+}
+.sort-data-container button:nth-child(n+5) {
+  border: 2px solid #3b6b38;
+}
+.sort-data-container button:nth-child(n+5):hover {
+  background-color: rgba(109, 79, 75, 0.2);
+}
+.sort-data-container button:nth-child(n+5):focus {
+  background-color: #f0f0f0;
+}
+.sort-data-container button:nth-child(n+5) svg {
+  color: #6d4f4b;
+}
+
+.data-page {
+  margin-right: 8%;
+  margin-top: 5em;
+  position: fixed;
+  top: 0;
+}
+.data-page button {
+  margin: 0 3px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 1.8em;
+  height: 5em;
+}
+.data-page button svg {
+  font-size: 2em;
+}
+.data-page button:nth-child(2), .data-page button:nth-child(4) {
+  margin-right: 4em;
+}
+.data-page button:nth-child(-n+2) {
+  border: 2px solid #6d4f4b;
+}
+.data-page button:nth-child(-n+2):hover, .data-page button:nth-child(-n+2):focus {
+  background-color: rgba(109, 79, 75, 0.2);
+}
+.data-page button:nth-child(-n+2) svg {
+  color: #6d4f4b;
+}
+.data-page button:nth-child(n+3) {
+  border: 2px solid #af2121;
+}
+.data-page button:nth-child(n+3):hover, .data-page button:nth-child(n+3):focus {
+  background-color: rgba(175, 33, 33, 0.2);
+}
+.data-page button:nth-child(n+3) svg {
+  color: #af2121;
+}
+.data-page button:nth-child(n+5) {
+  border: 2px solid #3b6b38;
+}
+.data-page button:nth-child(n+5):hover {
+  background-color: rgba(59, 107, 56, 0.2);
+}
+.data-page button:nth-child(n+5):focus {
+  background-color: #f0f0f0;
+}
+.data-page button:nth-child(n+5) svg {
+  color: #3b6b38;
+}
+
+.data-view .data-page,
+.data-view .table-header,
+.data-view .table-row {
+  display: grid;
+  grid-template-areas: "a b c d e f g h";
+  grid-template-columns: 1.8fr 1.8fr 1fr 1.4fr 3fr 3fr 1.5fr 1.5fr;
+}
+
+.data-view .data-page {
+  background-color: #f0f0f0;
+  align-items: center;
+  height: 4em;
+  margin-right: 0.5%;
+  margin-top: 4em;
+  width: 100%;
+}
+.data-view .data-page button {
+  margin: 0 3px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 0.5em;
+  height: 3em;
+}
+.data-view .data-page button svg {
+  font-size: 2em;
+}
+.data-view .data-page .pair-1 {
+  grid-area: f;
+}
+.data-view .data-page .pair-1 button {
+  border: 2px solid #6d4f4b;
+}
+.data-view .data-page .pair-1 button:hover, .data-view .data-page .pair-1 button:focus {
+  background-color: rgba(109, 79, 75, 0.2);
+}
+.data-view .data-page .pair-1 button svg {
+  color: #6d4f4b;
+}
+.data-view .data-page .pair-2 {
+  grid-area: g;
+  text-align: center;
+}
+.data-view .data-page .pair-2 button {
+  border: 2px solid #af2121;
+}
+.data-view .data-page .pair-2 button:hover, .data-view .data-page .pair-2 button:focus {
+  background-color: rgba(175, 33, 33, 0.2);
+}
+.data-view .data-page .pair-2 button svg {
+  color: #af2121;
+}
+.data-view .data-page .pair-3 {
+  grid-area: h;
+  text-align: center;
+}
+.data-view .data-page .pair-3 button {
+  border: 2px solid #3b6b38;
+}
+.data-view .data-page .pair-3 button:hover {
+  background-color: rgba(59, 107, 56, 0.2);
+}
+.data-view .data-page .pair-3 button:focus {
+  background-color: #f0f0f0;
+}
+.data-view .data-page .pair-3 button svg {
+  color: #3b6b38;
+}
+
+.data-view .table-header {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  font-size: 1.1rem;
+  width: 100%;
+  position: fixed;
+  top: 7em;
+}
+.data-view .table-header div {
+  padding: 0.5rem;
+  color: #af2121;
+}
+.data-view .table-header div:nth-child(4n+3), .data-view .table-header div:nth-child(4n+4) {
+  text-align: center;
+}
+
+.data-view .table-row {
+  color: #6d4f4b;
+}
+.data-view .table-row:first-child {
+  margin-top: 10em;
+}
+.data-view .table-row div {
+  padding: 0.3em;
+  border: 1px solid #f0f0f0;
+}
+.data-view .table-row div:nth-child(4n+3), .data-view .table-row div:nth-child(4n+4) {
+  text-align: center;
+}
+.data-view .table-row:nth-child(odd) {
+  background-color: rgba(59, 107, 56, 0.2);
+}
+.data-view .table-row:nth-child(even) {
+  background-color: rgba(175, 33, 33, 0.2);
+}
+
+.about-article {
+  padding: 2em;
+}
+.about-article h3 {
+  color: #af2121;
+  margin: 0.5em 0;
+}
+.about-article h2 {
+  color: #3b6b38;
+  font-size: 1.15em;
+  margin: 2em 0 0.5em 0;
+}
+.about-article ul {
+  list-style-type: circle;
+  margin-left: 1.6em;
+}
+.about-article ul li {
+  color: #6d4f4b;
+}
+.about-article ul li a {
+  color: #af2121;
+  text-decoration: none;
+  margin-left: 1em;
+}
+
+footer {
+  background-color: #f0f0f0;
+  color: #6d4f4b;
+  text-align: center;
+  height: 4em;
+  line-height: 4em;
+  font-size: 1.4em;
+  font-weight: bold;
+  border-top: 1px solid #af2121;
 }/*# sourceMappingURL=style.css.map */

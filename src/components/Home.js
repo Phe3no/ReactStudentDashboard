@@ -1,28 +1,38 @@
 import BarChart from "./BarChart";
-import { useEffect, useState } from "react";
+import LineChart from "./LineChart";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
-import { storeAverages } from "../features/data/dataSlice";
-
 import { getAllAssignments } from "../features/assignments/assignmentsSlice";
 import { getAllReviews } from "../features/reviews/reviewsSlice";
-import { getAllStudents } from "../features/students/studentsSlice";
-
-import { onChart, oneStudentOnChart } from "../features/students/studentsSlice";
-
+import {
+  getAllStudents,
+  onChart,
+  oneStudentOnChart,
+} from "../features/students/studentsSlice";
+import {
+  getChartType,
+  storeAverages,
+  storeChartType,
+  sortDifficultLowToHigh,
+  sortDifficultHighToLow,
+  sortFunLowToHigh,
+  sortFunHighToLow,
+} from "../features/data/dataSlice";
 import StudentNavBar from "./StudentNavBar";
-
-import { useNavigate } from "react-router-dom";
+import {
+  MdShowChart,
+  MdBarChart,
+  MdArrowDownward,
+  MdArrowUpward,
+} from "react-icons/md";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const [averageRatingBasedOn, setAverageRatingBasedOn] = useState("");
 
   const assignments = useSelector(getAllAssignments);
   const reviews = useSelector(getAllReviews);
   const students = useSelector(getAllStudents);
+  const chartType = useSelector(getChartType);
 
   const filteredStudents = () =>
     students
@@ -79,42 +89,39 @@ const Home = () => {
   useEffect(() => {
     const result = calculateAveragesAllStudentsIncluded();
     dispatch(storeAverages(result));
-  }, [dispatch, students]);
+  }, [dispatch, students /*, /*calculateAveragesAllStudentsIncluded*/]);
 
   return (
     <article>
       <nav className="main-nav">{renderStudents}</nav>
-      <BarChart text={averageRatingBasedOn} />
+      <div className="average-chart-menu">
+        <h2>Average rating based on checked student(s)</h2>
+        <div className="sort-data-container">
+          <div>
+            <button onClick={() => dispatch(sortDifficultLowToHigh())}>
+              <MdArrowUpward />
+            </button>
+            <button onClick={() => dispatch(sortDifficultHighToLow())}>
+              <MdArrowDownward />
+            </button>
+            <button onClick={() => dispatch(sortFunLowToHigh())}>
+              <MdArrowUpward />
+            </button>
+            <button onClick={() => dispatch(sortFunHighToLow())}>
+              <MdArrowDownward />
+            </button>
+            <button onClick={() => dispatch(storeChartType("bar"))}>
+              <MdBarChart />
+            </button>
+            <button onClick={() => dispatch(storeChartType("line"))}>
+              <MdShowChart />
+            </button>
+          </div>
+        </div>
+      </div>
+      {chartType === "bar" ? <BarChart /> : <LineChart />}
     </article>
   );
 };
 
 export default Home;
-
-/*React.useEffect(() => {
-  if (publicTypeIndex) {
-    (async () => {
-      const notesListIndex = publicTypeIndex.findSubject(
-        solid.forClass,
-        schema.TextDigitalDocument
-      );
-
-      if (!notesListIndex) {
-        // If no notes document is listed in the public type index, create one:
-        const notesList = await initialiseNotesList();
-
-        if (notesList !== null) {
-          setNotesList(notesList);
-        }
-      } else {
-        // If the public type index does list a notes document, fetch it:
-        const notesListUrl = notesListIndex.getRef(solid.instance);
-
-        if (typeof notesListUrl === "string") {
-          const document = await fetchDocument(notesListUrl);
-          setNotesList(document);
-        }
-      }
-    })();
-  }
-}, [publicTypeIndex]);*/

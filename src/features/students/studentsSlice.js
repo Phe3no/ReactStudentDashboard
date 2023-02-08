@@ -4,6 +4,7 @@ import axios from "axios";
 const STUDENTS_URL = "http://localhost:5000/students";
 
 const initialState = {
+  student: {},
   students: [],
   status: "idle",
   error: null,
@@ -33,16 +34,11 @@ export const studentsSlice = createSlice({
       });
     },
     oneStudentOnChart: (state, action) => {
-      console.log(action.payload);
       state.students.forEach((student) => {
-        console.log(action.payload);
         if (student.id === action.payload) {
-          student.onChart = true;
-        } else {
-          student.onChart = false;
+          state.student = student;
         }
       });
-      state.students.forEach((student) => console.log(student.onChart));
     },
     setOnChartAllStudentsTrue: (state, action) => {
       state.students.map((student) => (student.onChart = true));
@@ -68,6 +64,7 @@ export const studentsSlice = createSlice({
 export const { onChart, oneStudentOnChart, setOnChartAllStudentsTrue } =
   studentsSlice.actions;
 
+export const getSelectedStudent = (state) => state.students.student;
 export const getAllStudents = (state) => state.students.students;
 export const getStudentsStatus = (state) => state.students.status;
 export const getStudentsError = (state) => state.students.error;

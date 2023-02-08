@@ -5,7 +5,7 @@ const ASSIGNMENTS_URL = "http://localhost:5000/assignments";
 
 const initialState = {
   students: [],
-  status: "idle", // loading | succeeded | failed
+  status: "idle",
   error: null,
 };
 

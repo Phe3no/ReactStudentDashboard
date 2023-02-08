@@ -6,10 +6,14 @@ const StudentsList = () => {
   const students = useSelector(getAllStudents);
 
   const content = students.map((student) => (
-    <StudentsOverview key={student.id} student={student} />
+    <StudentsOverview
+      className="students-container"
+      key={student.id}
+      student={student}
+    />
   ));
 
-  return <div>{content}</div>;
+  return <div className="students-container">{content}</div>;
 };
 
 export default StudentsList;
