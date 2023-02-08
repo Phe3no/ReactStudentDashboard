@@ -80,22 +80,22 @@ const About = () => {
           Front-end Webdevelopment.
         </li>
         <li>
-          I spent quite some time on the dentists exercise, of which the code
-          you can find at the following link.
+          I spent quite some time on the dentists exercise, to practice a lot
+          with react and redux. The code you can find at the following link.
           <a href="git@github.com:Phe3no/DentistCcompanyBVT.git">
             git@github.com:Phe3no/DentistCcompanyBVT.git
           </a>
         </li>
         <li>
           If you take a look at the dentist app, make sure that before: "npm run
-          start" you run: npx json-server -p 5000 -w src/app/data.json{" "}
+          start" you run: npx json-server -p 5000 -w src/app/data.json
         </li>
         <li>
           I made use of " json-server " to retrieve data from a JSON-file as if
           it came from an API.
         </li>
         <li>
-          Axios is used as a dependencie to do CRUD operations. In the dentist
+          Axios is used as a dependency to do CRUD operations. In the dentist
           exercise i used Create, Read, Update and Delete. In this app only
           Read, but the rest of the operations can be added relatively easily.
         </li>
